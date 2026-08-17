@@ -179,7 +179,9 @@ Si quieres añadir una nueva funcionalidad, intenta mantener esta organización 
 
 ## 🤝 Contribuir
 
-Las contribuciones son bienvenidas. Puedes ayudar de diferentes maneras:
+Las contribuciones son bienvenidas y ayudan a mejorar KimiXP.
+
+Puedes contribuir de diferentes maneras:
 
 - 🐛 Reportando errores
 - 💡 Proponiendo nuevas funciones
@@ -189,7 +191,15 @@ Las contribuciones son bienvenidas. Puedes ayudar de diferentes maneras:
 - 🔀 Creando Pull Requests
 - 💬 Ayudando a otros usuarios
 
-Antes de realizar cambios importantes, revisa [`CONTRIBUTING.md`](CONTRIBUTING.md).
+### 🚀 ¿Quieres empezar?
+
+Consulta las [Issues abiertas](../../issues) para encontrar tareas en las que puedas colaborar.
+
+Si es tu primera contribución, busca Issues con la etiqueta `good first issue`.
+
+Antes de realizar cambios, revisa [`CONTRIBUTING.md`](CONTRIBUTING.md) para conocer las reglas y el proceso de contribución.
+
+¡Toda contribución es bienvenida! ❤️
 
 ---
 
