@@ -101,7 +101,7 @@ No necesitas ser un experto para utilizarlo, pero algunas partes pueden requerir
 Si tienes Git instalado:
 
 ```bash
-git clone https://github.com/TU-USUARIO/KimiXP.git
+git clone https://github.com/WemphiraOrg/KimiXP.git
 cd KimiXP
 ```
 
@@ -261,6 +261,6 @@ El proyecto empezó como una idea y continúa creciendo gracias al desarrollo y 
 
 **KimiXP — Open Source Discord Bot**
 
-Hecho con 💙 por [BrunoDevPe](https://github.com/TU-USUARIO)
+Hecho con 💙 por [BrunoDevPe](https://github.com/WemphiraOrg)
 
 </div>

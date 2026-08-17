@@ -71,7 +71,7 @@ Crea una copia del repositorio en tu propia cuenta de GitHub.
 ### 2. Clona tu fork
 
 ```bash
-git clone https://github.com/TU-USUARIO/KimiXP.git
+git clone https://github.com/WemphiraOrg/KimiXP.git
 cd KimiXP
 ```
 
