@@ -1,0 +1,184 @@
+﻿# Guía de Configuración — Botlevel
+
+Este directorio contiene la configuración externa del bot. Puedes modificar estos parámetros sin necesidad de alterar el código fuente del sistema.
+
+Archivos de Configuración
+
+config.json: Archivo de configuración principal con valores predeterminados globales.
+
+messages.json: Plantillas de textos y notificaciones enviadas por el bot.
+
+Parámetros en config.json
+
+1. development
+
+debug (true / false): Si está activo, el sistema mostrará información técnica detallada en la consola/logs.
+
+2. prefix
+
+default (cadena): Prefijo para comandos de texto. Por defecto: "!".
+
+3. defaults
+
+Configuración predeterminada global para todos los servidores. Puede sobrescribirse por servidor en la base de datos.
+
+xp.message (Entero): XP por mensaje válido. Default: 20.
+
+xp.multimedia (Entero): XP por mensaje con multimedia. Default: 25.
+
+xp.voice (Entero): XP por intervalo de voz. Default: 10.
+
+voice.interval_minutes (Entero): Minutos entre cada otorgamiento de XP por voz. Default: 10.
+
+leveling_enabled (true / false): Si el sistema de niveles está activado por defecto.
+
+message_cooldown (Entero): Segundos de espera entre mensajes por usuario. Default: 45.
+
+max_recovery_xp (Entero): Límite máximo de XP recuperable por usuario. Default: 500.
+
+max_recovery_messages (Entero): Límite máximo de mensajes recuperables por usuario. Default: 50.
+
+remove_previous_roles (true / false): Si es true, al obtener un nuevo rol de nivel, se retirará el rol del escalón anterior.
+
+4. formula
+
+base_multiplier (Número): Factor cuadrático para la curva de progresión de niveles.
+
+linear_increment (Número): Incremento lineal entre niveles.
+
+5. recovery
+
+enabled (true / false): Activa la lectura y procesamiento de mensajes acumulados mientras el bot estuvo apagado.
+
+max_xp_per_user (Entero): Límite máximo de XP que un usuario puede recuperar por periodo de apagado.
+
+max_messages_per_user (Entero): Límite máximo de mensajes procesables por usuario durante la recuperación.
+
+batch_size (Entero): Cantidad de mensajes por lote en recuperación histórica. Default: 200.
+
+max_run_messages (Entero): Límite máximo de mensajes por ejecución de recuperación. Default: 10000.
+
+6. channels
+
+announcement (Cadena con ID de canal): Canal donde se enviarán las notificaciones de apagado, inicio y avisos generales del sistema.
+
+level_up_channel (Cadena con ID de canal): Canal dedicado para los embeds de subida de nivel. Si está vacío, el aviso se enviará en el mismo canal donde el usuario envió el mensaje.
+
+leveling (Lista de IDs): Canales habilitados para ganar XP. Si la lista está vacía ([]), el sistema funcionará en todos los canales (excepto los ignorados).
+
+ignored_channels (Lista de IDs): Canales expresamente excluidos de la ganancia de XP.
+
+7. embeds
+
+color_primary: Color hexadecimal en formato cadena (ej: "0x5865F2").
+
+color_success: Color para notificaciones positivas.
+
+color_warning: Color para advertencias o apagado.
+
+color_danger: Color para errores.
+
+footer_text: Texto al pie de los mensajes embed.
+
+footer_icon_url: URL opcional para el icono del pie de página.
+
+8. levels_command
+
+members_per_page (Entero): Cantidad de miembros mostrados por página en /levels.
+
+embed_color (Cadena): Color del embed de /levels (ej: "0x5865F2").
+
+embed_title (Cadena): Título del embed de /levels.
+
+embed_footer (Cadena): Texto del pie del embed de /levels.
+
+button_timeout (Entero): Tiempo en segundos antes de desactivar los botones de paginación.
+
+staff_only (true / false): Si es true, solo usuarios con permisos de administrador pueden usar /levels.
+
+9. leaderboard_command
+
+items_per_page (Entero): Cantidad de usuarios mostrados por página en /leaderboard.
+
+embed_color (Cadena): Color del embed de /leaderboard.
+
+embed_title (Cadena): Título del embed de /leaderboard.
+
+embed_footer (Cadena): Texto del pie del embed de /leaderboard.
+
+10. reset_command
+
+backup_enabled (true / false): Si es true, crea una copia de seguridad de la base de datos antes de resetear.
+
+reset_xp (true / false): Reinicia la XP de todos los usuarios.
+
+reset_levels (true / false): Reinicia los niveles de todos los usuarios.
+
+reset_messages (true / false): Reinicia los contadores de mensajes y XP total.
+
+reset_cursors (true / false): Reinicia los cursores de canal (permite reprocesar historial completo).
+
+staff_only (true / false): Si es true, solo administradores pueden usar /reset.
+
+11. recover_command
+
+max_messages_per_user (Entero): Limite de mensajes a procesar por usuario en /recuperar.
+
+max_xp_per_user (Entero): Limite de XP a otorgar por usuario en /recuperar.
+
+staff_only (true / false): Si es true, solo administradores pueden usar /recuperar.
+
+Variables disponibles en messages.json
+
+En el archivo messages.json puedes incluir los siguientes comodines según el mensaje:
+
+{user}: Mención directa al usuario (<@ID>).
+
+{username}: Nombre visible del usuario.
+
+{level}: Nivel alcanzado o actual.
+
+{old_level}: Nivel previo a una actualización múltiple.
+
+{new_level}: Nuevo nivel alcanzado.
+
+{xp}: Puntos de XP actuales.
+
+{role_name}: Nombre del rol otorgado.
+
+Comandos disponibles
+
+El bot admite tanto comandos de texto (prefijo configurable) como slash commands. El prefijo por defecto es "!" y se puede cambiar en config.json sección prefix.default.
+
+Perfil y niveles: !level / /level, !rank / /rank, !profile / /profile, !leaderboard / /leaderboard, !levels / /levels
+
+Administración: !admin_add_xp / /admin_add_xp, !admin_set_level / /admin_set_level, !admin_sync / /admin_sync, !admin_reload_config / /admin_reload_config, !reset / /reset, !recuperar / /recuperar, !admin_set_xp / /admin_set_xp, !admin_set_voice_interval / /admin_set_voice_interval, !admin_config / /admin_config
+
+Ayuda: !help / /help
+
+Nota: El help predeterminado de discord.py está desactivado y se usa el comando personalizado help.
+
+Sistema multi-servidor
+
+Botlevel funciona automáticamente en cualquier servidor donde esté instalado. Cada servidor mantiene sus propios datos, configuración y roles. No es necesario modificar el código para agregar nuevos servidores.
+
+Configuración por servidor
+
+Los valores de la sección defaults pueden sobrescribirse por servidor usando los comandos administrativos:
+
+/admin_set_xp message 20
+/admin_set_xp multimedia 25
+/admin_set_xp voice 10
+/admin_set_voice_interval 10
+/admin_config recovery max_user_messages 50
+
+La configuración por servidor se almacena en SQLite y persiste entre reinicios.
+
+/admin_config
+
+Muestra la configuración actual del servidor o modifica valores:
+
+/admin_config → muestra toda la configuración
+/admin_config xp message 30 → cambia XP por mensaje
+/admin_config voice interval 15 → cambia intervalo de voz
+/admin_config recovery batch_size 100 → cambia tamaño de lote de recuperación

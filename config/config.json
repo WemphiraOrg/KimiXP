@@ -1,0 +1,75 @@
+{
+    "development": {
+        "debug": false
+    },
+    "prefix": {
+        "default": "!"
+    },
+    "defaults": {
+        "xp": {
+            "message": 20,
+            "multimedia": 25,
+            "voice": 10
+        },
+        "voice": {
+            "interval_minutes": 10
+        },
+        "leveling_enabled": true,
+        "message_cooldown": 45,
+        "max_recovery_xp": 500,
+        "max_recovery_messages": 50,
+        "remove_previous_roles": false
+    },
+    "formula": {
+        "base_multiplier": 50,
+        "linear_increment": 100
+    },
+"recovery": {
+    "enabled": true,
+    "max_xp_per_user": 500,
+    "max_messages_per_user": 50,
+    "batch_size": 200,
+    "max_run_messages": 10000
+},
+    "channels": {
+        "announcement": "1538373097877536838",
+        "level_up_channel": "1538372358329471047",
+        "leveling": [],
+        "ignored_channels": []
+    },
+    "embeds": {
+        "color_primary": "0x5865F2",
+        "color_success": "0x57F287",
+        "color_warning": "0xFEE75C",
+        "color_danger": "0xED4245",
+        "footer_text": "Botlevel — Sistema de Niveles",
+        "footer_icon_url": ""
+    },
+    "levels_command": {
+        "members_per_page": 10,
+        "embed_color": "0x5865F2",
+        "embed_title": "⭐ Niveles — Botlevel",
+        "embed_footer": "Botlevel",
+        "button_timeout": 120,
+        "staff_only": false
+    },
+    "leaderboard_command": {
+        "items_per_page": 10,
+        "embed_color": "0x5865F2",
+        "embed_title": "🏆 Tabla de Clasificación — Botlevel",
+        "embed_footer": "Botlevel"
+    },
+    "reset_command": {
+        "backup_enabled": true,
+        "reset_xp": true,
+        "reset_levels": true,
+        "reset_messages": true,
+        "reset_cursors": false,
+        "staff_only": true
+    },
+    "recover_command": {
+        "max_messages_per_user": 50,
+        "max_xp_per_user": 500,
+        "staff_only": false
+    }
+}

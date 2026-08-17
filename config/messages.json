@@ -1,0 +1,12 @@
+{
+"level_up": "🎉 ¡Felicidades {user}! Has alcanzado el Nivel {level}.",
+"level_up_multi": "🎉 ¡Atención {user}! Has avanzado del Nivel {old_level} al Nivel {new_level}.",
+"role_granted": "🏆 Se te ha otorgado el rol {role_name}.",
+"system_suspended_title": "⚠️ Sistema de Niveles Suspendido",
+"system_suspended_desc": "El sistema de niveles ha sido suspendido temporalmente porque el bot se encuentra fuera de servicio.\n\nLos datos existentes se conservarán intactos. El sistema volverá a funcionar cuando el bot sea iniciado nuevamente.",
+"system_resumed_title": "🟢 Sistema de Niveles Reactivado",
+"system_resumed_desc": "El bot vuelve a estar activo y el sistema de XP está funcionando nuevamente.",
+"recovery_summary": "🔄 Recuperación finalizada: Se procesaron mensajes pendientes y se asignaron recompensas acumuladas.",
+"no_data": "❌ No se encontraron datos de experiencia para el usuario especificado.",
+"config_reloaded": "✅ La configuración y los mensajes han sido recargados correctamente."
+}
