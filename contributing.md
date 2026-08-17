@@ -163,11 +163,9 @@ No es necesario que tu código sea perfecto, pero sí debe ser razonablemente cl
 
 ---
 
-## 🔐 Seguridad
-
 Si encuentras una vulnerabilidad de seguridad que pueda afectar a KimiXP o a sus usuarios, **no publiques los detalles públicamente en un Issue**.
 
-Utiliza el canal de contacto de seguridad indicado en el repositorio para informar del problema de forma responsable.
+Consulta [`SECURITY.md`](SECURITY.md) para conocer el procedimiento de reporte de vulnerabilidades.
 
 Nunca publiques credenciales, tokens o información privada.
 
